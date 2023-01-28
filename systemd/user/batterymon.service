@@ -1,0 +1,11 @@
+[Unit]
+Description=A battery monitoring service
+After=network.target
+
+[Service]
+ExecStart=/home/ls-devs/.config/scripts/low_battery.sh
+Restart=always
+RestartSec=360
+
+[Install]
+WantedBy=multi-user.target
