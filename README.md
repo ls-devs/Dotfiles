@@ -8,6 +8,7 @@
   - [Spotify](#spotify)
   - [Battery notifications](#battery-notifications)
   - [Greeter](#greeter)
+  - [GTK](#gtk)
 <!--toc:end-->
 
 ## Dependencies
@@ -73,4 +74,11 @@ systemctl --user enable batterymon.service
 ```kitty
 cp Dotfiles/usr/share/* -r /usr/share/
 sudo systemctl enable sddm.service
+```
+
+## GTK
+
+```kitty
+# Select Catppuccin in lxappearance
+lxappearance
 ```
