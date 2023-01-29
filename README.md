@@ -1,9 +1,19 @@
 # Installation
 
+<!--toc:start-->
+- [Installation](#installation)
+  - [Dependencies](#dependencies)
+  - [Shell](#shell)
+  - [Process](#process)
+  - [Spotify](#spotify)
+  - [Battery notifications](#battery-notifications)
+  - [Greeter](#greeter)
+<!--toc:end-->
+
 ## Dependencies
 
 ```kitty
-yay -Syu alacritty autorandr bat beautyline catppuccin-cursors-mocha catppuccin-gtk-theme-mocha dunst ripgrep feh fzf ghc ghcup-hs-bin git haskell-utf8-string haskell-x11 kitty lazygit libnotify lxappearance nerd-fonts-git nodejs polybar picom playerctl python-pip rofi stack starship ttf-font-awesome ttf-material-icons-git unclutter xcape xdo xorg-xinit xorg-xmessage xorg-xsetroot zoxide network-manager-applet acpi betterlockscreen lightdm lightdm-webkit2-greeter ligthm-webkit-theme-aether xf86-video-intel brave-bin discord ranger vim git
+yay -Syu alacritty autorandr bat beautyline catppuccin-cursors-mocha catppuccin-gtk-theme-mocha dunst ripgrep feh fzf ghc ghcup-hs-bin git haskell-utf8-string haskell-x11 kitty lazygit libnotify lxappearance nerd-fonts-git nodejs polybar picom playerctl python-pip rofi stack starship ttf-font-awesome ttf-material-icons-git unclutter xcape xdo xorg-xinit xorg-xmessage xorg-xsetroot zoxide network-manager-applet acpi betterlockscreen xf86-video-intel brave-bin discord ranger vim git imagemagick vi sddm
 ```
 
 ## Shell
@@ -56,4 +66,11 @@ pip install dbus-python
 
 ```kitty
 systemctl --user enable batterymon.service
+```
+
+## Greeter
+
+```kitty
+cp Dotfiles/usr/share/* -r /usr/share/
+sudo systemctl enable sddm.service
 ```
