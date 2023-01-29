@@ -17,7 +17,7 @@ if [ "$battery_greped_status" == "remaining" ]; then
 
 
         elif [ "$battery_percentage_v" -lt 11 ]; then
-                dunstify -a system -i "/usr/share/icons/elementary/status/48/notification-power.svg" -t 0 -r 9990 -u critical "Battery Critically Low" "${battery_percentage_v}% Remaining.\nRuntime: $runtime"
+                dunstify -a system -i "/usr/share/icons/elementary/status/48/notification-power.svg" -t 9000 -r 9990 -u critical "Battery Critically Low" "${battery_percentage_v}% Remaining.\nRuntime: $runtime"
         fi
 
 # Remind to disconnect charger if battery >=85%

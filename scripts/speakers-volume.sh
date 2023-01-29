@@ -28,7 +28,7 @@ function send_notification {
     elif [[ $(($volume)) -ge 100 ]]; then
       ICON="/usr/share/icons/Papirus-Dark/symbolic/status/audio-volume-overamplified-symbolic.svg"
     fi
-    dunstify  -i "$ICON" -t 800 -r 2593 -u normal "    $volume%"
+    dunstify  -i "$ICON" -t 1100 -r 2593 -u normal "    $volume%"
 }
 
 case $1 in
@@ -45,7 +45,7 @@ case $1 in
     mute)
       pamixer --toggle-mute > /dev/null
 	if is_mute ; then
-	    dunstify -i "/usr/share/icons/Papirus-Dark/24x24/actions/audio-volume-muted.svg" -t 800 -r 2593 -u normal "Muted"
+	    dunstify -i "/usr/share/icons/Papirus-Dark/24x24/actions/audio-volume-muted.svg" -t 1100 -r 2593 -u normal "Muted"
 	else
 	    send_notification
 	fi
