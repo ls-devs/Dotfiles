@@ -1,6 +1,7 @@
 # Installation
 
 <!--toc:start-->
+
 - [Installation](#installation)
   - [Dependencies](#dependencies)
   - [Shell](#shell)
@@ -9,7 +10,7 @@
   - [Battery notifications](#battery-notifications)
   - [Greeter](#greeter)
   - [GTK](#gtk)
-<!--toc:end-->
+  <!--toc:end-->
 
 ## Dependencies
 
@@ -81,4 +82,10 @@ sudo systemctl enable sddm.service
 ```kitty
 # Select Catppuccin in lxappearance
 lxappearance
+```
+
+## Bat
+
+```kitty
+bat --cache build
 ```
