@@ -2,6 +2,7 @@ module Custom.MyManagement where
 
 import Custom.MyScratchpads
 import XMonad
+import XMonad.Actions.SpawnOn (manageSpawn)
 import XMonad.Hooks.ManageHelpers (doCenterFloat)
 import XMonad.Util.NamedScratchpad
 
@@ -10,4 +11,4 @@ myManagement =
     [(className =? "witcher3.exe" <&&> className =? "steam_app_0") --> doCenterFloat]
 
 myManageHook :: ManageHook
-myManageHook = namedScratchpadManageHook myScratchpads <> myManagement
+myManageHook = namedScratchpadManageHook myScratchpads <> myManagement <> manageSpawn

@@ -4,7 +4,6 @@ module Custom.MyKeys where
 
 import Custom.MyDecorations
 import Custom.MyEasyMotion
--- import Custom.MyMacAddresses
 import Custom.MyScratchpads
 import Custom.MyWorkspaces
 import Data.Map qualified as M
@@ -32,28 +31,35 @@ import XMonad.StackSet qualified as W
 import XMonad.Util.NamedScratchpad
 import XMonad.Util.Run
 import XMonad.Util.SpawnOnce
+import XMonad.Actions.SpawnOn
 
 myKeys :: [(String, X ())]
 myKeys =
   [ -- Terminal
     ("M-<Return>", spawn "kitty"),
     -- Browser
-    ("M-b", spawn "brave"),
-    ("M-f", spawn "kitty -e /usr/bin/ranger"),
+    ("M-b", spawnOn "\xf269" "brave"),
+    -- Files
+    ("M-f", spawnOn "\xf07c" "kitty -e /usr/bin/ranger"),
+    ("M-S-f", spawnOn "\xf07c" "Thunar"),
+    -- Spotify
+    ("M-s", spawnOn "\xf04c7" "spotify"),
+    -- Discord
+    ("M-d", spawnOn "\xf066f" "discord"),
     -- Rofi
     ("M-p", spawn "rofi -show drun"),
     ("M1-<Tab>", spawn "rofi -show window"),
     -- XPrompts
-    ("M-s-m", manPrompt myPromptConfig),
-    ("M-s-x", xmonadPrompt myPromptConfig),
+    ("M-S-m", manPrompt myPromptConfig),
+    ("M-S-x", xmonadPrompt myPromptConfig),
     ("M-S-q", confirmPrompt myPromptConfig "exit" $ io exitSuccess),
     -- Flameshot
     ("<Print>", spawn "flameshot gui"),
     ("S-<Print>", spawn "flameshot full"),
     -- Scrot
-    ("C-<Print>", spawn "scrot -q 100 ~/Desktop/reddit/%Y-%m-%d-%T.png"),
+    ("C-<Print>", spawn "scrot -q 100 ~/Images/%Y-%m-%d-%T.png"),
     -- Search commands (wait for next keypress)
-    ("M-s", SM.submap $ searchEngineMap $ S.promptSearchBrowser myPromptConfig "brave"),
+    ("M-S-:", SM.submap $ searchEngineMap $ S.promptSearchBrowser myPromptConfig "brave"),
     -- NamedScratchpads
     ("M-t", namedScratchpadAction myScratchpads "quick commands"),
     ("M-C-g", namedScratchpadAction myScratchpads "glava"),
